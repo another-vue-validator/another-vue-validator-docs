@@ -1,0 +1,6 @@
+@import "layout.css";
+@import "style.css";
+
+.val-message {
+    color: red;
+}

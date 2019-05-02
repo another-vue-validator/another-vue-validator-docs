@@ -1,31 +1,84 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="layout-container">
+
+    <Header/>
+
+    <Sidebar/>
+
+    <main class="layout-main">
+      <div class="hero"><h1 class="text-center">Another Vue Validator</h1>
+        <div class="text-center">Yet another vue validation</div>
+      </div>
+      <GettingStarted/>
+      <!--<Intro></Intro>-->
+      <!--<Setup></Setup>-->
+      <!--<ValidationBag></ValidationBag>-->
+
+
+      <!--<transition name="fade" mode="out-in">-->
+      <!--</transition>-->
+    </main>
+
+    <!--<footer>FOOTER</footer>-->
   </div>
+
 </template>
 
+<script>
+
+//console.log("Rule", avv.Rule)
+import Vue from 'vue';
+import GettingStarted from './chapters/GettingStarted';
+import Intro from './examples/Intro';
+import Setup from './examples/Setup';
+import ValidationBag from './examples/ValidationBag';
+import BasicExample from './examples/BasicExample';
+
+import avv from '../../another-vue-validator/src/avv';
+import DemoWithCode from './components/DemoWithCode.vue';
+import Sidebar from './components/Sidebar';
+import Header from './components/Header';
+
+Vue.use(avv);
+
+// Components
+Vue.component('Header', Header);
+Vue.component('Sidebar', Sidebar);
+Vue.component('DemoWithCode', DemoWithCode);
+
+// Chapters
+Vue.component('GettingStarted', GettingStarted);
+
+// Examples
+Vue.component('Intro', Intro);
+Vue.component('Setup', Setup);
+Vue.component('ValidationBag', ValidationBag);
+Vue.component('BasicExample', BasicExample);
+
+
+export default {}
+
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  #nav {
+    padding: 30px;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  #nav a {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  #nav a.router-link-exact-active {
+    color: #42b983;
+  }
 </style>

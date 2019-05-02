@@ -1,10 +1,20 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+'use strict';
 
-Vue.config.productionTip = false
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import 'prismjs';
+import 'prismjs/themes/prism-tomorrow.css';
+
+Vue.config.productionTip = false;
 
 new Vue({
   router,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
+
+// Vue.nextTick(function () {
+//   //$(this.$el).find('pre code').each(function(index, pre) {
+//   Prism.highlightAll();
+//   //});
+// });
