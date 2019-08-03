@@ -1,68 +1,64 @@
 <template>
-  <div id="validationBag">
-    <h1>Validation Bag</h1>
+  <form>
 
-    <form>
+    <div>
+      <label>Firstname</label>
+    </div>
 
+    <div>
+      <input name="firstname"
+             v-model="firstname"/>
+    </div>
+
+    <div class="val-message">
       <div>
-        <label>Firstname</label>
+        {{ bag.firstError('firstname') }}
       </div>
+    </div>
 
-      <div>
-        <input name="firstname"
-               v-model="firstname"/>
-      </div>
+    <h4>Form status:</h4>
 
-      <div class="val-message">
-        <div>
-          {{ bag.firstError('firstname') }}
-        </div>
-      </div>
+    <div>Has Error? {{hasError}}</div>
+    <div>Submitted? {{submitted}}</div>
+    <div>
+      Number of errors: {{ bag.countErrors() }}
+    </div>
 
-      <h3>Form status:</h3>
+    <div>
+      All errors:
 
-      <div>Has Error? {{hasError}}</div>
-      <div>Submitted? {{submitted}}</div>
-      <div>
-        Number of errors: {{ bag.countErrors() }}
-      </div>
+      <ul class="all-errors">
+        <li v-for="fieldErrors in bag.allErrors()">
+          <ul>
+            <li v-for="error in fieldErrors">
+              <div class="val-message">{{ error}}</div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
-      <div>
-        All errors:
+    <div>
+      All error fields:
 
-        <ul class="all-errors">
-          <li v-for="fieldErrors in bag.allErrors()">
-            <ul>
-              <li v-for="error in fieldErrors">
-                <div class="val-message">{{ error}}</div>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+      <ul class="all-errors">
+        <li v-for="field in bag.allErrorFields()">
 
-      <div>
-        All error fields:
-
-        <ul class="all-errors">
-          <li v-for="field in bag.allErrorFields()">
-
-            <ul>
-              <li v-for="error in field.errors()">
-                <div class="val-message">{{$utils.prettyLabel(field.name)}} : {{error}}</div>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+          <ul>
+            <li v-for="error in field.errors()">
+              <div class="val-message">{{$utils.prettyLabel(field.name)}} : {{error}}</div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
 
-      <button @click.prevent="submit">Submit</button>
+    <button @click.prevent="submit">Submit</button>
 
-      <button @click.prevent="reset">Reset</button>
+    <button @click.prevent="reset">Reset</button>
 
-    </form>
-  </div>
+  </form>
 
 </template>
 <style scoped>
@@ -71,6 +67,7 @@
     margin: 0;
     padding: 0;
   }
+
   .all-errors {
     margin: 5px;
   }

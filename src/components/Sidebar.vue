@@ -8,16 +8,10 @@
         <a href="#setup">Setup</a>
       </li>
       <li>
-        <a href="#validationBag">Validation Bag</a>
+        <a href="#basic">Basic</a>
       </li>
       <li>
-        <a href="#">Chapter 3</a>
-      </li>
-      <li>
-        <a href="#intro">Introduction</a>
-      </li>
-      <li>
-        <a href="#setup">Setup</a>
+        <a href="#declarative">Declarative</a>
       </li>
       <li>
         <a href="#validationBag">Validation Bag</a>

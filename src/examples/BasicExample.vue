@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="layout-form">
     <div class="form-group" :class="{error: validation.hasError('email')}">
       <div class="label">* Email</div>
@@ -7,7 +8,9 @@
         type="text"
         class="form-control"
         v-model="email"
-        v-validate/></div>
+        v-validate
+      />
+      </div>
 
       <div class="message" v-show="validation.show('email')">{{ validation.firstError('email') }}</div>
     </div>
@@ -17,6 +20,7 @@
         <button type="button" class="btn btn-primary" @click="submit">Submit</button>
       </div>
     </div>
+  </div>
   </div>
 </template>
 

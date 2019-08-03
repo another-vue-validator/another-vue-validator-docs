@@ -16,6 +16,7 @@ body {
 
 header {
     display: flex;
+    z-index: 1;
 }
 
 nav {

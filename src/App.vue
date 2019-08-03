@@ -12,7 +12,7 @@
       <GettingStarted/>
       <!--<Intro></Intro>-->
       <!--<Setup></Setup>-->
-      <!--<ValidationBag></ValidationBag>-->
+<!--      <UsageAndExamples/>-->
 
 
       <!--<transition name="fade" mode="out-in">-->
@@ -29,9 +29,11 @@
 //console.log("Rule", avv.Rule)
 import Vue from 'vue';
 import GettingStarted from './chapters/GettingStarted';
+import UsageAndExamples from './chapters/UsageAndExamples';
 import Intro from './examples/Intro';
 import Setup from './examples/Setup';
 import ValidationBag from './examples/ValidationBag';
+import DeclarativeExample from './examples/DeclarativeExample';
 import BasicExample from './examples/BasicExample';
 
 import avv from '../../another-vue-validator/src/avv';
@@ -48,15 +50,19 @@ Vue.component('DemoWithCode', DemoWithCode);
 
 // Chapters
 Vue.component('GettingStarted', GettingStarted);
+Vue.component('UsageAndExamples', UsageAndExamples);
 
 // Examples
 Vue.component('Intro', Intro);
 Vue.component('Setup', Setup);
 Vue.component('ValidationBag', ValidationBag);
 Vue.component('BasicExample', BasicExample);
+Vue.component('DeclarativeExample', DeclarativeExample);
 
 
-export default {}
+export default {
+  components: {DeclarativeExample}
+}
 
 </script>
 
