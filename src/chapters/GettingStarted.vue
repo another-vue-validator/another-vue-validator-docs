@@ -128,7 +128,7 @@ let Component = Vue.extend({
       <pre><code class="language-html" v-pre>&lt;div class=&quot;form-group&quot; :class=&quot;{error: validation.hasError('email')}&quot;&gt;</code></pre>
       <pre><code class="language-html" v-pre>&lt;div class=&quot;message&quot;&gt;{{ validation.firstError('email') }}&lt;/div&gt;</code></pre>
       <p>
-        Checkout <a href="#validationBag_api">ValidationBag API</a> for all the methods you can used to display
+        Checkout <a href="#validationBag_api">ValidationBag API</a> for all the methods you can use to display
         validation related data.
       </p>
     </div>
