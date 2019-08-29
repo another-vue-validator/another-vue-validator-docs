@@ -5,6 +5,7 @@ var path = require('path');
 
 module.exports = {
   publicPath: 'avv',
+  outputDir: 'docs',
 
   configureWebpack: config => {
     // Slower sourcemaps but more accurate

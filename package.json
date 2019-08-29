@@ -13,7 +13,8 @@
     "prismjs": "^1.16.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
-    "waypoints": "^4.0.1"
+    "waypoints": "^4.0.1",
+    "@fortawesome/fontawesome-free": "^5.10.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.6.0",
