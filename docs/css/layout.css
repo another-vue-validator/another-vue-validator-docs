@@ -1,0 +1,127 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    background-color: #666;
+}
+
+body {
+    --header-height: 64px;
+    --sidebar-width: 250px;
+    --footer-height: 50px;
+    --border-height: calc(var(--header-height) + var(--footer-height));
+}
+
+header {
+    display: flex;
+    z-index: 1;
+}
+
+nav {
+    height: var(--header-height);
+    flex-grow: 1;
+}
+
+/*@media (min-width: 768px) {*/
+/*.fixed {*/
+/*flex: 0 0 200px;*/
+/*min-height: calc(100vh - var(--border-height));*/
+/*min-width: 180px;*/
+/*}*/
+
+/*.col .fluid {*/
+/*min-height: calc(100vh - var(--border-height));*/
+/*}*/
+/*}*/
+
+header {
+    background-color: teal;
+    height: var(--header-height);
+    background-color: tomato;
+    position: fixed;
+    width: 100%;
+}
+
+nav {
+
+}
+
+main {
+    margin-top: var(--header-height);
+    margin-left: var(--sidebar-width);
+    /*background-color: lightblue;*/
+    padding-bottom: var(--footer-height);
+}
+
+.sidebar {
+    position: fixed;
+    /*height: 100vh;*/
+    height: calc(100vh - var(--header-height));
+    overflow: auto;
+    /*height: 100vh;*/
+    width: var(--sidebar-width);
+    margin-top: var(--header-height);
+    background-color: #8e44ad;
+    /*grid-area: sidebar;*/
+}
+
+/*footer {*/
+/*height: var(--footer-height);*/
+/*background-color: lightgreen;*/
+/*}*/
+
+
+.layout-container {
+    /*margin: 10px;*/
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    /*@formatter:off*/
+
+    grid-template-areas:
+            "main";
+
+    /*@formatter:on*/
+
+    grid-gap: .75em;
+    height: 100vh;
+}
+
+@media (max-width: 480px) {
+    .layout-container {
+        display: block;
+    }
+}
+
+.layout-container header {
+    grid-area: header;
+    background-color: teal;
+}
+
+.layout-container nav {
+    /*display: inline;*/
+    height: 100%;
+    line-height: 100%;
+    /*grid-area: nav;*/
+    background-color: tomato;
+}
+
+.layout-container main {
+    padding-left: 40px;
+    grid-area: main;
+    /*background-color: lightblue;*/
+}
+
+.layout-container footer {
+    grid-area: footer;
+    background-color: lightgreen;
+}
+
+
+h1 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
