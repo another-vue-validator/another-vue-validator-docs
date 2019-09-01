@@ -4,6 +4,7 @@
     <Header/>
 
     <Sidebar/>
+<!--        <Test/>-->
 
     <main class="layout-main">
       <div class="hero"><h1 class="text-center">Another Vue Validator</h1>
@@ -33,19 +34,27 @@ import UsageAndExamples from './chapters/UsageAndExamples';
 import Intro from './examples/Intro';
 import Setup from './examples/Setup';
 import ValidationBag from './examples/ValidationBag';
+import DeclarativeBasicExample from './examples/DeclarativeBasicExample';
 import DeclarativeExample from './examples/DeclarativeExample';
+import DeclarativeObjectExample from './examples/DeclarativeObjectExample';
 import BasicExample from './examples/BasicExample';
+import Dependencies from './examples/Dependencies';
+import AsyncValidation from './examples/AsyncValidation';
+import AsyncValidationCache from './examples/AsyncValidationCache';
 
 import avv from '../../another-vue-validator/src/avv';
 import DemoWithCode from './components/DemoWithCode.vue';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
+import Test from './components/Test';
 
 Vue.use(avv);
 
 // Components
 Vue.component('Header', Header);
 Vue.component('Sidebar', Sidebar);
+Vue.component('Test', Test);
+
 Vue.component('DemoWithCode', DemoWithCode);
 
 // Chapters
@@ -57,11 +66,14 @@ Vue.component('Intro', Intro);
 Vue.component('Setup', Setup);
 Vue.component('ValidationBag', ValidationBag);
 Vue.component('BasicExample', BasicExample);
+Vue.component('AsyncValidation', AsyncValidation);
+Vue.component('AsyncValidationCache', AsyncValidationCache);
+Vue.component('DeclarativeBasicExample', DeclarativeBasicExample);
 Vue.component('DeclarativeExample', DeclarativeExample);
-
+Vue.component('DeclarativeObjectExample', DeclarativeObjectExample);
+Vue.component('Dependencies', Dependencies);
 
 export default {
-  components: {DeclarativeExample}
 }
 
 </script>

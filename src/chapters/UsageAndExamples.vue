@@ -45,7 +45,7 @@
     </div>
     <div class="section-sub-title">Password validation</div>
     <div class="section-content">
-      <!--      <DemoWithCode :components="'CrossFieldValidationExample1'"/>-->
+      <!--      <DemoWithCode :components="'CrossFieldValidationExample'"/>-->
       <p>
         In this example, the <span class="code">password</span> field has ordinary validation rule that it's required
         and its minimum length is 6. <br/>
@@ -88,7 +88,7 @@
     </div>
     <div class="section-sub-title">Conditional validation</div>
     <div class="section-content">
-      <!--      <DemoWithCode :components="'CrossFieldValidationExample2'"/>-->
+      <!--      <DemoWithCode :components="'CrossFieldValidationExample'"/>-->
       <p>
         This example demonstration the conditional validation use case,
         where the <span class="code">other</span> field is only required when user selects the "Other fruit (please
@@ -111,7 +111,7 @@
     </div>
     <div class="section-sub-title">Basic</div>
     <div class="section-content">
-      <!--      <DemoWithCode :components="'AsyncValidationExample1'"/>-->
+      <!--      <DemoWithCode :components="'AsyncValidation'"/>-->
       <p>
         Async validation is also supported by the <span class="code">Validator.custom()</span> method,
         comparing to <a href="#custom_rule">Custom Rule</a>, the difference is that instead of returning the error
@@ -155,7 +155,7 @@
           we are making ajax request.
         </li>
       </ul>
-      <!--      <DemoWithCode :components="'AsyncValidationExample2'"/>-->
+      <!--      <DemoWithCode :components="'AsyncValidation'"/>-->
       <p>
         To tackle the first problem, we use the <span class="code">cache</span> option and set it to true,
         to tell the library we would like to cache all previous results. <br/>

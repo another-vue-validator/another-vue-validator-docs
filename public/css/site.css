@@ -1,5 +1,6 @@
 @import "layout.css";
 @import "style.css";
+@import "fontawesome/css/all.css";
 
 .val-message {
     color: red;

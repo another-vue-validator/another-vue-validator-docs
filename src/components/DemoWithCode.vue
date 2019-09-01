@@ -35,7 +35,13 @@ import 'waypoints/lib/jquery.waypoints';
 import prism from 'prismjs';
 
 function getVueFile(component) {
-  let url = '/examples/' + component + '.vue';
+  let env = process.env;
+  let base = '/';
+  if (env.NODE_ENV === 'production') {
+    base = env.BASE_URL;
+  }
+
+  let url = base + 'examples/' + component + '.vue';
 
   console.log('Getting vue file: ' + url);
 

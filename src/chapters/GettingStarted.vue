@@ -70,6 +70,7 @@ let Component = Vue.extend({
       then use the <span class="code">validation</span> object in template to display validation result. Finally, call
       <span class="code">this.$validate()</span> method for form submission.
       <DemoWithCode :components="'BasicExample'"/>
+
     </div>
 
     <div id="explanation" class="section-title">
@@ -118,6 +119,7 @@ let Component = Vue.extend({
         custom function will validate the value directly.
       </div>
     </div>
+
     <div class="section-sub-title">The validation field</div>
     <div class="section-content">
       <p>
@@ -146,16 +148,55 @@ let Component = Vue.extend({
     }
   });</code></pre>
 
+    <div id="async" class="section-title">
+      Async Validation
+    </div>
+    <div class="section-content">
+      <DemoWithCode :components="'AsyncValidation'"/>
+    </div>
+
+    <div id="async-cache" class="section-title">
+      Async Cache Validation
+    </div>
+    <div class="section-content">
+      <DemoWithCode :components="'AsyncValidationCache'"/>
+    </div>
+
+    <div id="dependencies" class="section-title">
+      <div>Dependencies</div>
+    </div>
+
+    <div class="section-content">
+      Sometimes fields depends on one another. Also called cross-field validation. Meaning, when updating one field it requires re-validation of another field.
+      <p/>
+      AVV provides a <i>deps</i> property to define fields that should be validated together.
+    </div>
+
+    <DemoWithCode :components="'Dependencies'"/>
+
     <div id="declarative" class="section-title">
       <div>Declarative example</div>
     </div>
 
     <div class="section-content">
-      AVV support declarative validations
+      AVV also supports declarative validations
     </div>
+
+    <DemoWithCode :components="'DeclarativeBasicExample'"/>
+
+    <p>A more complex declarative example showing how to pass arguments to validators, specify multiple validations using an array and declaring custom messages.</p>
 
     <DemoWithCode :components="'DeclarativeExample'"/>
 
+    <div id="declarativeObject" class="section-title">
+      <div>Declarative validation using object syntax</div>
+    </div>
+
+    <div class="section-content">
+      You can declare validations using an object syntax which supports more options
+    </div>
+
+    <DemoWithCode :components="'DeclarativeObjectExample'"/>
 
     <div id="validationBag" class="section-title">
       <div>Validation bag example</div>
