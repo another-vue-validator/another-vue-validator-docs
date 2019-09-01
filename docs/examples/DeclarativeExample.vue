@@ -1,76 +1,52 @@
 <template>
   <div class="layout-form">
 
-    <div class="form-group" :class="{error: validation.hasError('email')}">
-      <div class="label">* Email</div>
+    <div class="form-group" :class="{error: validation.hasError('age')}">
+      <div class="label">* Age</div>
 
       <div class="content"><input
+        name="age"
         type="text"
         class="form-control"
-        v-model="email"
+        v-model="age"
         v-validate="{
                 rules:
                 [
-                'required:\'Mail is required, please provide one\'',
-                'between:2,5',
-                'integer'
+                'required',
+                'integer',
+                'between:10,20'
                 ]}"
       /></div>
 
+      <div class="message" v-show="validation.show('age')">{{ validation.firstError('age') }}</div>
+    </div>
+
+    <div class="form-group" :class="{error: validation.hasError('firstname')}">
+      <div class="label">* Firstname</div>
+
+      <div class="content"><input type="text" class="form-control"
+                                  name="name"
+                                  v-model="firstname"
+                                  v-validate="{rules: [
+                                                  'required: \'Firstname is required, please provide one\''
+                                                  ]}"
+      /></div>
+      <div class="message" v-show="validation.show('firstname')">{{ validation.firstError('firstname') }}</div>
+    </div>
+
+    <div class="form-group" :class="{error: validation.hasError('email')}">
+      <div class="label">* Email</div>
+
+      <div class="content"><input type="text" class="form-control"
+                                  name="email"
+                                  v-model="email"
+                                  v-validate="{rules: [
+                                                  'required',
+                                                  'maxLength: 10, \'Sorry emails cannot exceed 10 characters\'',
+                                                  'email: \'That is no email, check your format\''
+                                                  ]}"
+      /></div>
       <div class="message" v-show="validation.show('email')">{{ validation.firstError('email') }}</div>
-    </div>
-
-    <div class="form-group" :class="{error: validation.hasError('number')}">
-      <div class="label">Number</div>
-
-      <div class="content"><input
-        type="text"
-        class="form-control"
-        v-model="number"
-        v-validate="{
-                rules:[
-                {
-                name: 'required',
-                msg: 'Number is required, please provide one'
-                },
-                {
-                name: 'digit',
-                msg: 'Gimme a NUMBER FOOL'
-                },
-                {
-                name: 'between',
-                msg: 'Fix your range sucka',
-                args: [2,5]
-                }
-                ]
-                }"
-      /></div>
-
-      <div class="message" v-show="validation.show('number')">{{ validation.firstError('number') }}</div>
-    </div>
-
-
-    <div class="form-group" :class="{error: validation.hasError('dynamicemail')}">
-      <div class="label">* Dynamic Email</div>
-
-      <div class="content"><input
-        type="text"
-        class="form-control"
-        v-model="dynamicemail"
-        v-validate="{rules: ['required']}"
-        /></div>
-      <div class="message" v-show="validation.show('dynamicemail')">{{ validation.firstError('dynamicemail') }}</div>
-    </div>
-
-    <div class="form-group" >
-      <div class="label">* Moo</div>
-
-      <div class="content"><input
-        type="text"
-        class="form-control"
-        v-model="moo"
-
-      /></div>
     </div>
 
     <div class="form-group">
@@ -79,6 +55,7 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script type="text/javascript">
@@ -86,12 +63,9 @@
 export default {
   data: function () {
     return {
-      //obj: { active: true},
-      //pok: {email: ''},
-      email: '',
-      dynamicemail: '',
-      number: '',
-      moo: ''
+      age: '',
+      firstname: '',
+      email: ''
     };
   },
 
@@ -104,16 +78,6 @@ export default {
           }
         });
     }
-  },
-
-  //
-  // mounted() {
-  //
-  //   setTimeout(() => {
-  //     console.log("active ", this.obj.active)
-  //     this.obj.active = false;
-  //     console.log("active ", this.obj.active)
-  //   }, 5000);
-  // },
+  }
 }
 </script>
