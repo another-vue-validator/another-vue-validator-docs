@@ -21,6 +21,9 @@
         logic.
       </p>
       <p>
+        <i>Note:</i> AVV does provide a declarative solution for simple validations.
+      </p>
+      <p>
         This plugin strives to achieve both simplicity and flexibility for form validation, basic validation should
         require only the minimal amount of codes, at the same time, it should also be able to support complex validation
         cases like:
@@ -167,7 +170,7 @@ let Component = Vue.extend({
     </div>
 
     <div class="section-content">
-      Sometimes fields depends on one another. Also called cross-field validation. Meaning, when updating one field it requires re-validation of another field.
+      Cross-field validation is when field validations depend on one another. Meaning, when updating one field it requires re-validation of another field.
       <p/>
       AVV provides a <i>deps</i> property to define fields that should be validated together.
     </div>
