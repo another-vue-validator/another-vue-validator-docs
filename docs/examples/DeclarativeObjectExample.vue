@@ -1,7 +1,7 @@
 <template>
   <div class="layout-form">
 
-    <div class="form-group" :class="{error: validation.hasError('number')}">
+    <div class="form-group" :class="{error: validation.show('number')}">
       <div class="label">Number</div>
 
       <div class="content"><input

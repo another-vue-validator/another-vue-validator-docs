@@ -6,7 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
-    ? 'another-vue-validator-docs'
+    ? ''
   : 'avv',
 
   outputDir: 'docs',

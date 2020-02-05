@@ -1,7 +1,7 @@
 <template>
   <div>
   <div class="layout-form">
-    <div class="form-group" :class="{error: validation.hasError('email')}">
+    <div class="form-group" :class="{error: validation.show('email')}">
       <div class="label">* Email</div>
 
       <div class="content"><input
@@ -34,7 +34,7 @@ export default {
     };
   },
 
-  avv: {
+  validation: {
     validators: {
       email: function (ctx) {
         return Validator.context(ctx).required().email();

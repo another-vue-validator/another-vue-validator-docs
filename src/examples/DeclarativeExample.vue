@@ -1,7 +1,7 @@
 <template>
   <div class="layout-form">
 
-    <div class="form-group" :class="{error: validation.hasError('age')}">
+    <div class="form-group" :class="{error: validation.show('age')}">
       <div class="label">* Age</div>
 
       <div class="content"><input
@@ -21,7 +21,7 @@
       <div class="message" v-show="validation.show('age')">{{ validation.firstError('age') }}</div>
     </div>
 
-    <div class="form-group" :class="{error: validation.hasError('firstname')}">
+    <div class="form-group" :class="{error: validation.show('firstname')}">
       <div class="label">* Firstname</div>
 
       <div class="content"><input type="text" class="form-control"
@@ -34,7 +34,7 @@
       <div class="message" v-show="validation.show('firstname')">{{ validation.firstError('firstname') }}</div>
     </div>
 
-    <div class="form-group" :class="{error: validation.hasError('email')}">
+    <div class="form-group" :class="{error: validation.show('email')}">
       <div class="label">* Email</div>
 
       <div class="content"><input type="text" class="form-control"

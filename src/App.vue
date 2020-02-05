@@ -11,6 +11,9 @@
         <div class="text-center">Yet another vue validation</div>
       </div>
       <GettingStarted/>
+      <UsageAndExamples />
+      <Miscellaneous />
+      <APIAndReference />
       <!--<Intro></Intro>-->
       <!--<Setup></Setup>-->
 <!--      <UsageAndExamples/>-->
@@ -31,6 +34,8 @@
 import Vue from 'vue';
 import GettingStarted from './chapters/GettingStarted';
 import UsageAndExamples from './chapters/UsageAndExamples';
+import Miscellaneous from './chapters/Miscellaneous';
+import APIAndReference from './chapters/APIAndReference';
 import Intro from './examples/Intro';
 import Setup from './examples/Setup';
 import ValidationBag from './examples/ValidationBag';
@@ -60,6 +65,8 @@ Vue.component('DemoWithCode', DemoWithCode);
 // Chapters
 Vue.component('GettingStarted', GettingStarted);
 Vue.component('UsageAndExamples', UsageAndExamples);
+Vue.component('Miscellaneous', Miscellaneous);
+Vue.component('APIAndReference', APIAndReference);
 
 // Examples
 Vue.component('Intro', Intro);

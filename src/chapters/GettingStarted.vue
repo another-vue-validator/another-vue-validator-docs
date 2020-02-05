@@ -15,13 +15,13 @@
       <p>
         It uses a model-based solution for monitoring user input, this means all your validation rules can be put
         together in one place in javascript code,
-        while the HTML template simply displays validation status and result, this IMO results in a better separation of
+        while the HTML template simply displays the validation status and result, this results in a better separation of
         business logic and presentation.
         Placing validation rules in code also means you can leverage the full power of javascript to implement complex
         logic.
       </p>
       <p>
-        <i>Note:</i> AVV does provide a declarative solution for simple validations.
+        <i>Note:</i> AVV does provide a declarative solution for common validations.
       </p>
       <p>
         This plugin strives to achieve both simplicity and flexibility for form validation, basic validation should
@@ -41,9 +41,9 @@
     </div>
     <div class="section-content">
       Package is installable via npm.
-      <pre><code class="language-dash">npm install --save simple-vue-validator</code></pre>
+      <pre><code class="language-dash">npm install --save another-vue-validator</code></pre>
       You can also install it via bower.
-      <pre><code class="language-dash">bower install --save simple-vue-validator</code></pre>
+      <pre><code class="language-dash">bower install --save another-vue-validator</code></pre>
       <div class="note">
         For bower package, please use /dist/plugin.js
       </div>
@@ -55,10 +55,10 @@
       You can import the library and use as a Vue plugin to enable the functionality globally on all components
       containing validation configuration.
       <pre><code class="language-javascript">import Vue from 'vue';
-import SimpleVueValidation from 'simple-vue-validator';
-Vue.use(SimpleVueValidation);</code></pre>
+import avv from 'another-vue-validator';
+Vue.use(avv);</code></pre>
       Alternatively it is possible to import a mixin directly to components in which it will be used.
-      <pre><code class="language-javascript">import SimpleVueValidator from 'simple-vue-validator';
+      <pre><code class="language-javascript">import avv from 'another-vue-validator';
 let Component = Vue.extend({
   mixins: [SimpleVueValidator.mixin],
   validators: { ... }

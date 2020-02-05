@@ -30,7 +30,7 @@ export default {
     }
   },
 
-  avv: {
+  validation: {
     validators: {
       firstname(ctx) {
         return Validator.context(ctx).required();

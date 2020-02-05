@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="layout-form">
-      <div class="form-group" :class="{error: validation.hasError('email')}">
+      <div class="form-group" :class="{error: validation.show('email')}">
         <div class="label">* Email</div>
 
         <div class="content"><input
@@ -15,7 +15,7 @@
         <div class="message" v-show="validation.show('email')">{{ validation.firstError('email') }}</div>
       </div>
 
-      <div class="form-group" :class="{error: validation.hasError('phone')}">
+      <div class="form-group" :class="{error: validation.show('phone')}">
         <div class="label">* Phone</div>
 
         <div class="content"><input
@@ -50,7 +50,7 @@ export default {
     };
   },
 
-  avv: {
+  validation: {
     validators: {
       email: function (ctx) {
 

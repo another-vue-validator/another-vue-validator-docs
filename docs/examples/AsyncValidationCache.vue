@@ -1,6 +1,6 @@
 <template>
   <div class="layout-form">
-    <div class="form-group" :class="{error: validation.hasError('domain')}">
+    <div class="form-group" :class="{error: validation.show('domain')}">
       <div class="label">Domain</div>
       <div class="content"><input type="text" class="form-control" v-model="domain"
                                   placeholder="only vuejs.org is available, others are taken"/></div>
@@ -31,7 +31,7 @@ export default {
     };
   },
 
-  avv: {
+  validation: {
     validators: {
       domain: {
         cache: true,

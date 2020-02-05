@@ -19,7 +19,7 @@
     <h4>Form status:</h4>
 
     <div>Has Error? {{hasError}}</div>
-    <div>Submitted? {{submitted}}</div>
+    <div>Submitted successfully? {{submitted}}</div>
     <div>
       Number of errors: {{ bag.countErrors() }}
     </div>
